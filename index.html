@@ -16,8 +16,13 @@
       color: white;
     }
 
-    /* ENCABEZADO */
+    /* ENCABEZADO FIJO */
     header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -39,6 +44,11 @@
 
     nav a:hover {
       text-decoration: underline;
+    }
+
+    /* SEPARADOR DEL HEADER FIJO */
+    .separador-header {
+      height: 80px;
     }
 
     h1 {
@@ -171,6 +181,9 @@
       <a href="#ayuda">Ayuda</a>
     </nav>
   </header>
+
+  <!-- SEPARADOR DEL HEADER FIJO -->
+  <div class="separador-header"></div>
 
   <!-- TÍTULO DE LA PÁGINA -->
   <h1>HorseHits</h1>
