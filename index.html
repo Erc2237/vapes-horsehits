@@ -7,53 +7,92 @@
     * {
       box-sizing: border-box;
     }
+
     body {
-      font-family: Arial, sans-serif;
-      background: url('fondo-neon.jpg') no-repeat center center fixed;
-      background-size: cover;
       margin: 0;
-      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: url('fondo.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: white;
     }
+
+    /* ENCABEZADO */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px 20px;
+    }
+
+    header img {
+      height: 40px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
     h1 {
       text-align: center;
-      margin-bottom: 40px;
-      text-shadow: 2px 2px 4px #000;
+      margin: 30px 0;
+      text-shadow: 2px 2px 5px black;
     }
+
+    /* PRODUCTOS */
     .productos {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
+      padding: 0 20px 60px;
     }
+
     .producto {
       background: rgba(0, 0, 0, 0.6);
-      padding: 15px;
       border-radius: 10px;
-      width: 100%;
-      max-width: 500px;
       display: flex;
-      align-items: center;
       gap: 15px;
-      box-sizing: border-box;
+      max-width: 500px;
+      width: 100%;
+      padding: 15px;
+      align-items: center;
     }
+
     .producto img {
       width: 100px;
-      height: auto;
       border-radius: 5px;
-      object-fit: cover;
     }
-    .producto div {
-      flex: 1;
-    }
+
     .producto h2 {
-      margin: 0 0 5px;
-      font-size: 1.2em;
+      margin: 0;
     }
+
     .producto ul {
       margin: 5px 0;
       padding-left: 20px;
     }
+
+    .precio-anterior {
+      text-decoration: line-through;
+      color: #ccc;
+      font-size: 0.9em;
+    }
+
+    .precio-actual {
+      font-size: 1.2em;
+      color: #ffffff;
+      font-weight: bold;
+      margin: 4px 0 0;
+    }
+
     .boton {
       display: inline-block;
       margin-top: 10px;
@@ -62,16 +101,32 @@
       color: white;
       text-decoration: none;
       border-radius: 5px;
-      text-align: center;
     }
+
     .boton:hover {
       background: #e63939;
     }
+
+    /* SECCIONES ADICIONALES */
+    section {
+      padding: 40px 20px;
+      background: rgba(0, 0, 0, 0.6);
+      max-width: 800px;
+      margin: 60px auto; /* ← Espacio arriba y abajo */
+      border-radius: 10px;
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
     @media (max-width: 600px) {
       .producto {
         flex-direction: column;
         text-align: center;
       }
+
       .producto img {
         width: 120px;
       }
@@ -80,69 +135,74 @@
 </head>
 <body>
 
+  <!-- ENCABEZADO CON LOGO Y MENÚ -->
+  <header>
+    <img src="logo.png" alt="Logo de la tienda">
+    <nav>
+      <a href="#productos">Productos</a>
+      <a href="#contacto">Contacto</a>
+      <a href="#ayuda">Ayuda</a>
+    </nav>
+  </header>
+
+  <!-- TÍTULO DE LA PÁGINA -->
   <h1>HorseHits</h1>
 
-  <div class="productos">
-    <!-- Producto 1 -->
+  <!-- SECCIÓN DE PRODUCTOS -->
+  <div class="productos" id="productos">
+
     <div class="producto">
-      <img src="bali-legacy.jpg" alt="Bali Bali Legacy">
+      <img src="producto1.jpg" alt="Producto 1">
       <div>
-        <h2>Bali Bali Legacy</h2>
+        <h2>Producto 1</h2>
         <ul>
-          <li>Hasta 30 000 puffs</li>
-          <li>Pantalla LED de batería</li>
-          <li>Recargable con puerto USB‑C</li>
+          <li>Característica A</li>
+          <li>Característica B</li>
+          <li>Característica C</li>
         </ul>
-        <p><strong>$15.00</strong></p>
-        <a class="boton" href="https://www.instagram.com/horsehits?igsh=MTI2cmtmOHM0NWQzOQ==" target="_blank">Pedir</a>
+        <span class="precio-anterior">$20.00</span>
+        <p class="precio-actual">$15.00</p>
+        <a class="boton" href="https://www.instagram.com/horsehits" target="_blank">Comprar</a>
       </div>
     </div>
 
-    <!-- Producto 2 -->
     <div class="producto">
-      <img src="hqd-black-ice.jpg" alt="HQD Click Plus Black Ice">
+      <img src="producto2.jpg" alt="Producto 2">
       <div>
-        <h2>HQD Click Plus – Black Ice</h2>
+        <h2>Producto 2</h2>
         <ul>
-          <li>18 000 puffs</li>
-          <li>Recargable</li>
-          <li>Pantalla interactiva</li>
+          <li>Característica A</li>
+          <li>Característica B</li>
+          <li>Característica C</li>
         </ul>
-        <p><strong>$16.00</strong></p>
-        <a class="boton" href="https://www.instagram.com/horsehits?igsh=MTI2cmtmOHM0NWQzOQ==" target="_blank">Pedir</a>
+        <span class="precio-anterior">$18.00</span>
+        <p class="precio-actual">$13.00</p>
+        <a class="boton" href="https://www.instagram.com/horsehits" target="_blank">Comprar</a>
       </div>
     </div>
 
-    <!-- Producto 3 -->
-    <div class="producto">
-      <img src="priv-watermelon.jpg" alt="Priv Bar Watermelon Chill">
-      <div>
-        <h2>Priv Bar – Watermelon Chill</h2>
-        <ul>
-          <li>15 000 puffs</li>
-          <li>Recargable</li>
-          <li>5 % nicotina</li>
-        </ul>
-        <p><strong>$13.00</strong></p>
-        <a class="boton" href="https://www.instagram.com/horsehits?igsh=MTI2cmtmOHM0NWQzOQ==" target="_blank">Pedir</a>
-      </div>
-    </div>
-
-    <!-- Producto 4 -->
-    <div class="producto">
-      <img src="bali-ice-mint.jpg" alt="Bali Class Ice Mint">
-      <div>
-        <h2>Bali Class – Ice Mint</h2>
-        <ul>
-          <li>2 000 puffs</li>
-          <li>Batería 900 mAh</li>
-          <li>5 % nicotina</li>
-        </ul>
-        <p><strong>$6.00</strong></p>
-        <a class="boton" href="https://www.instagram.com/horsehits?igsh=MTI2cmtmOHM0NWQzOQ==" target="_blank">Pedir</a>
-      </div>
-    </div>
   </div>
+
+  <!-- SECCIÓN CONTACTO -->
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>¿Tienes preguntas o quieres hacer un pedido personalizado? Contáctanos por cualquiera de estos medios:</p>
+    <ul>
+      <li>📩 Instagram: @horsehits</li>
+      <li>📱 WhatsApp: +507 6034-5420</li>
+    </ul>
+  </section>
+
+  <!-- SECCIÓN AYUDA -->
+  <section id="ayuda">
+    <h2>Ayuda</h2>
+    <p>Bienvenido a nuestra sección de ayuda. Aquí puedes encontrar respuestas a preguntas comunes:</p>
+    <ul>
+      <li><strong>¿Qué métodos de pago aceptamos?</strong> Se acepta efectivo o Yappy.</li>
+      <li><strong>¿Hacen envíos?</strong> Sí, ofrecemos envíos <strong>Gratis</strong> en la ciudad de Panamá.</li>
+      <li><strong>¿Puedo cambiar un producto?</strong> Solo si está sellado y dentro de 48 horas tras la compra.</li>
+    </ul>
+  </section>
 
 </body>
 </html>
